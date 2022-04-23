@@ -120,3 +120,236 @@ console.log(menos40yPorJ)
 
 
 
+
+const ordenador = {                         
+    marca: "La pava",
+    tipo: "portátil",
+    perifericos: [,"touchPad"],
+    almacenamiento :{
+        discos : ["SSD","HDD"],
+        maestro: 0
+    }      
+}
+
+ // TEST 1
+ if (typeof ordenador === "object") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 2
+  if (ordenador.marca === "La pava") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 3
+  if (ordenador.tipo === "portátil") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 4
+  if (ordenador.perifericos[1] === "touchPad") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 5
+  if (ordenador["almacenamiento"]["discos"][1] === "HDD") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 6
+  if (ordenador.almacenamiento.maestro === 0) {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+
+  console.log("\n")
+  console.log("TEST 2")
+
+  const obj = {
+      a:{
+          b : true,
+          c : [1,2],
+      },
+      d: 5,
+      f: "Casa",
+  }
+  
+// TEST 1
+if (typeof obj === "object") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 2
+  if (typeof obj.a.b === "boolean") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 3
+  if (typeof obj.a.c[1] === "number") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 4
+  if (typeof obj.d === "number") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 5
+  if (obj.d > 4 && obj.d < 8) {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 6
+  if (typeof obj.f === "string") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 7
+  if (obj.f.length === 4) {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+ 
+  console.log("\n")
+  console.log("TEST 3")
+
+  const arr = [{name:"pepito", age:25},{name:"pepito", age: 30},{name:"Javi", age:20}];
+
+  
+      
+    
+// TEST 1
+if (typeof arr === "object" && arr.length >= 0) {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 2
+  if (typeof arr[0] === "object") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 3
+  if (typeof arr[1] === "object") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 4
+  if (typeof arr[2] === "object") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 5
+  if (arr.length === 3) {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 6
+  if (arr[0].name === arr[1].name) {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 7
+  if (arr[1].name === "pepito") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 8
+  if (arr[1].age > arr[2].age) {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 9
+  if (arr[0].age === 25) {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+  // TEST 10
+  if (typeof arr[2].name === "string") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  // TEST 11
+  if (arr[2].name[0] === "J") {
+    console.log("apruebas");
+  } else {
+    console.log("suspendes");
+  }
+
+  console.log("\n" );
+  console.log("EJERCICIO DE FUNCIONES 1");
+  
+/*Crea la función convierteString debe recibir un tipo number y devolver el número como string.
+Si la función no recibe un dato tipo number debe devolver el string 'Debo ser ejecutada con un número'
+*/
+
+function convierteString (num){
+    if ( isNaN(num)){
+        alert("Debo ser ejecutada con un número")
+    } else{
+        num =  String(num)
+        console.log(num);
+    }
+}
+
+
+convierteString(4)
+
+/*
+Crea la función caracterInicial  debe recibir un tipo string y devolver un string con el primer carácter. 
+Si la función no recibe un dato tipo string debe devolver el string 'Debo ser ejecutada con un string'. 
+Si recibe un string vacío debe devolver 'Debo ser ejecutada con un string no vacío'
+*/
+
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 2");
+
+function caracterInicial(string){
+    if(typeof string === "string"){
+        return  string.charAt(0);
+    }  else if (string != typeof string){
+        alert("Debo ser ejecutada con un string");   
+    }   else if (string.lenght == 0){
+        alert("Debo ser ejecutada con un string no vacío")
+        }     
+       
+}
+
+let primeraLetra = caracterInicial("");
+
+console.log(primeraLetra);
