@@ -464,7 +464,7 @@ function esPalindromo(string) {
 }
 
 
-esPalindromo("");           //No he podido hacer que al poner un string vacío no salte el console.log de "Es un palindromo"
+esPalindromo("rallar");           //No he podido hacer que al poner un string vacío no salte el console.log de "Es un palindromo"
 
 /*
 Crea la función getPrecioMostrar para que devuelva una cadena de texto con formato precio con dos decimales. Para 2 debería devolver 2.00 €. 
@@ -474,6 +474,162 @@ Si la función no recibe un número debería devolver devolver 'no es un formato
 console.log("\n" );
 console.log("EJERCICIO DE FUNCIONES 7");
 
-function getPrecioMostrar(string){
+function getPrecioMostrar(num){
+  if (typeof num != "number"){
+    alert("No es un formato correcto");
+  } else {
+    num = num.toLocaleString("en-EU", {style:"currency", currency:"EUR"});
+    return num
+  }
+}
+
+let money = getPrecioMostrar(2)
+
+console.log(money);
+
+//Crea la función division que acepte como argumento dos números y devuelva el resultado de su división
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 8");
+
+function division(a,b){
+  let divi = a/b
+  return divi
+}
+
+let div= division(10,5)
+
+console.log(div);
+
+// Crea la función esPar que acepte como argumento un número y devuelva true si es par y false si es impar
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 9");
+
+function esPar(a){
+  if (a % 2 == 0){
+    return true
+  } else{
+    return false
+  }
+}
+
+let par = esPar(2)
+console.log(par);
+
+//Crear la función ordenarArray2 que acepta como argumento un array de números y devuelva un array ordenado de mayor a menor
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 10");
+
+function ordenarArray2(arr){  
+  arr = arr.sort(function (a, b) {  return b - a;  })
+  return arr
+}
+
+let orden = ordenarArray2([1,2,3,4,5,6,7,8,9,10])
+
+console.log(orden)
+
+//Crear la función obtenerImpares que acepta como argumento un array de números y devuelva un array con los elementos impares
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 11");
+
+function obtenerImpares(arr){
+  arr = arr.filter(n => n%2);
+  return arr
+}
   
+let odds = obtenerImpares([1,2,3,4,5,6,7,8,9,10])
+
+console.log(odds)
+
+//Crear la función sumarArray que acepte como argumento un array numérico y devuelva la suma de los números en el array Array: [1, 2, 3] resultado: 6
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 12");
+
+function sumarArray(arr){
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    
+  }
+  return sum
+}
+
+let suma = sumarArray([1,2,3]);
+console.log(suma);
+
+
+//Crear la función multiplicarArray que acepte como argumento un array numérico y devuelva la multiplicación de los números en el array Array: [2, 3, 4] resultado: 24
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 13");
+
+function multiplicarArray(arr){
+  let mult = 1;
+ 
+  for (multiplicacion of arr){
+       mult *= multiplicacion
+  
+  }
+    return mult
+}
+let multiplicar = multiplicarArray([2,3,4]);
+console.log(multiplicar);
+
+//Crea una función que dada una array de números, devuelve una nueva array que tenga solo los números que son 5 o más. Ejemplo entrada [3, 6, 8, 2] salida [6, 8]
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 14");
+
+function numerosMayores (arr){
+  let mayores = []
+
+  for (numero of arr){
+
+    if (numero > 5){
+       mayores.push(numero)
+   }
+    
+  }
+  return mayores
+}
+
+let formula = numerosMayores([1,5,10,6,3,2,12]);
+
+console.log(formula);
+
+/*
+Crea una aplicación que nos pida un número por prompt y con un método se lo pasamos por parámetro para que nos indique si es o no un número primo, debe devolver true si es primo sino false. 
+Un número primo es aquel que solo puede dividirse entre 1 y sí mismo. Por ejemplo: 25 no es primo, ya que 25 es divisible entre 5, sin embargo, 17 si es primo.
+*/
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 15");
+
+const num = parseInt(prompt("Ingresa un numero"));
+let esPrimo = true;
+
+
+if (num === 1) {
+    alert("Ingresa un numero mayor a 1");
+}
+
+else if (num > 1) {
+  
+    for (let i = 2; i < num; i++) {
+        if (num % i == 0) {
+            esPrimo = false;
+            break;
+        }
+    }
+    if (esPrimo) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
 }
