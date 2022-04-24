@@ -611,6 +611,7 @@ Un número primo es aquel que solo puede dividirse entre 1 y sí mismo. Por ejem
 console.log("\n" );
 console.log("EJERCICIO DE FUNCIONES 15");
 
+
 const num = parseInt(prompt("Ingresa un numero"));
 let esPrimo = true;
 
@@ -633,3 +634,50 @@ else if (num > 1) {
         console.log(false);
     }
 }
+
+/*
+Crea una función checkPassword con una variable tipo String que contenga una contraseña cualquiera. Después se te pedirá que introduzcas la contraseña (usando prompt), con 3 intentos. Cuando aciertes ya no pedirá más la contraseña y mostrará un mensaje diciendo “Enhorabuena”(ej.un alert). Piensa bien en la condición de salida (3 intentos y si acierta sale, aunque le queden intentos).
+*/
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 16");
+
+
+
+
+function checkPassword(){
+    
+    const password = "Baku";
+  
+    for (let i =0; i<=3; i++){
+
+      if (i != 3){
+        const Login = prompt("Introduce la clave");
+
+        if (Login == password){
+
+          alert("Enhorabuena");
+          console.log("Enhorabuena")
+          break
+        }
+      }  else {
+          alert("FUERA INTRUSO")
+          console.log("La cagaste")
+      }
+    }
+}    
+
+checkPassword()
+
+
+/*
+Crea una función llamada CalculadoraInversa, nos pedirá 2 operandos (int) y un signo aritmético (String), según este último se realizará la operación correspondiente. Al final mostrará el resultado en un cuadro de diálogo. Los signos aritméticos disponibles son:
++: suma los dos operadores.
+-: resta los operandos.
+*: multiplica los operandos.
+/: divide los operandos, este debe dar un resultado con decimales (double)
+^: 1o operando como base y 2o como exponente.
+%: módulo, resto de la división entre operando1 y operando2.
+*/
+
+
