@@ -118,7 +118,8 @@ console.log(menos40yPorJ)
 
 //Crea un objeto en la variable ordenador de tal modo que el siguiente código no muestre por consola 'suspendes'
 
-
+console.log("\n")
+console.log("TEST 1")
 
 
 const ordenador = {                         
@@ -320,6 +321,7 @@ Si la función no recibe un dato tipo number debe devolver el string 'Debo ser e
 function convierteString (num){
     if ( isNaN(num)){
         alert("Debo ser ejecutada con un número")
+
     } else{
         num =  String(num)
         console.log(num);
@@ -340,16 +342,138 @@ console.log("\n" );
 console.log("EJERCICIO DE FUNCIONES 2");
 
 function caracterInicial(string){
-    if(typeof string === "string"){
-        return  string.charAt(0);
-    }  else if (string != typeof string){
-        alert("Debo ser ejecutada con un string");   
-    }   else if (string.lenght == 0){
-        alert("Debo ser ejecutada con un string no vacío")
-        }     
-       
+    if (string.length == 0){
+      alert("Debo ser ejecutada con un string no vacío");
+
+     } else if (typeof string === "string"){
+       return  string.charAt(0);  
+
+      } else {
+        alert("Debo ser ejecutada con un string");
+      }
 }
 
-let primeraLetra = caracterInicial("");
+let primeraLetra = caracterInicial("Baku");
 
 console.log(primeraLetra);
+
+//Comentario: en este ejercicio quería que saltara la alerta de string vacío específicamente si no se introducía nada. En el else if si ponía (typeof string != string) me ahorraba poner los tipos de datos uno a uno pero entonces el else no funcionaba como esperaba porque el propio vacío ya lo entendía como un tipo de dato no string y la alerta del else no se aplicaba. Un string vacío se representa así "", sin embargo no sé por qué el else no lo acepta y salta la alerta. 
+
+
+/*
+Crea la función ultimoCaracter debe recibir un tipo string y devolver un string con el último carácter.
+Si la función no recibe un dato tipo string debe devolver el string 'Debo ser ejecutada con un string'.
+Si recibe un string vacío debe devolver 'Debo ser ejecutada con un string no vacío'
+*/
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 3");
+
+function ultimoCaracter(string){
+  if (string.length == 0){
+    alert("Debo ser ejecutada con un string no vacío");
+
+   } else if (typeof string === "string"){
+     return  string.slice(-1);  
+
+    } else {
+      alert("Debo ser ejecutada con un string");
+    }
+}
+
+let ultimaLetra = ultimoCaracter("Baku");
+
+console.log(ultimaLetra);
+
+
+/*
+Crea la función cuentaCaracteres debe recibir un tipo string y devolver un number con el número de carácteres
+Si la función no recibe un dato tipo string debe devolver el string 'Debo ser ejecutada con un string'
+*/
+
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 4");
+
+
+function cuentaCaracteres(string){
+
+     if (typeof string === "string"){
+     return  string.length  
+
+    } else {
+      alert("Debo ser ejecutada con un string");
+    }
+}
+
+let numCaracteres = cuentaCaracteres("Baku");
+
+console.log(numCaracteres);
+
+
+/*
+Crea la función getCiudadesOrdenada. La función recibirá una cadena de texto de ciudades separadas por comas y devolverá un array de ciudades ordenadas alfabéticamente si la función no recibe una cadena de texto o recibe una cadena de texto sin comas debe devolver 'no es un formato correcto'
+*/
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 5");
+
+
+function getCiudadesOrdenada(string){
+  if (typeof string != "string" || !string.includes(',')){
+    alert("No es un formato correcto");
+  } else {
+    alpha = string.split(",")
+    return alpha.sort()
+  }
+}
+ 
+let ciudades = getCiudadesOrdenada("Valencia, Sevilla, Toledo, Albacete, Barcelona");
+console.log(ciudades);
+
+
+/*
+Un palíndromo es una palabra que se escribe igual del derecho que del revés por ejemplo orejero, rallar o somos.  Crea la función esPalindromo que recibirá una cadena de texto y deberá devolver si es un palíndromo o no.
+Si la función no recibe una cadena de texto o está vacía 'no es un formato correcto'
+*/
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 6");
+
+
+function esPalindromo(string) {
+  myBreak:
+  if (string.length == 0 || typeof string != "string"){
+    
+    alert ("No es un formato correcto");
+    break myBreak
+  }
+  
+  const arrayValues = string.split('');
+
+  const reverseArrayValues = arrayValues.reverse();
+
+  const reverseString = reverseArrayValues.join('');
+
+  if(string == reverseString) {
+      console.log('Es un palindromo');
+  }
+  else {
+      console.log('No es un palindromo');
+  }
+}
+
+
+esPalindromo("");           //No he podido hacer que al poner un string vacío no salte el console.log de "Es un palindromo"
+
+/*
+Crea la función getPrecioMostrar para que devuelva una cadena de texto con formato precio con dos decimales. Para 2 debería devolver 2.00 €. 
+Si la función no recibe un número debería devolver devolver 'no es un formato correcto'
+*/
+
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 7");
+
+function getPrecioMostrar(string){
+  
+}
