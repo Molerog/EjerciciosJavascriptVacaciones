@@ -662,7 +662,7 @@ function checkPassword(){
         }
       }  else {
           alert("FUERA INTRUSO")
-          console.log("La cagaste")
+          console.log("Suerte en la proxima")
       }
     }
 }    
@@ -680,4 +680,39 @@ Crea una función llamada CalculadoraInversa, nos pedirá 2 operandos (int) y un
 %: módulo, resto de la división entre operando1 y operando2.
 */
 
+console.log("\n" );
+console.log("EJERCICIO DE FUNCIONES 17");
 
+
+function CalculadoraInversa(){
+
+  let string = (prompt(`Escribe la operacion que desees realizar:  +, -, *, /, ^ o %)`));
+  let num1= parseInt(prompt(`Escribe el primer operando`));
+  let num2= parseInt(prompt(`Escribe el segundo operando`));
+
+
+    if (string.includes("+")){
+    let suma = num1 + num2
+    return suma
+  } else if (string.includes("-")){
+    let resta = num1 - num2
+    return resta
+  } else if (string.includes("*")){
+    let multiplicacion = num1 * num2
+    return multiplicacion
+  } else if (string.includes("/")){
+    let division = num1 / num2
+    return  division.toFixed(2)
+  } else if (string.includes("^")){
+    let elevar = num1 ** num2
+    return elevar
+  } else if(string.includes("%")){
+    let resto = num1 % num2
+    return resto
+  }
+  
+
+}
+
+let operacion = CalculadoraInversa()
+console.log(operacion)
